@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="reset.css" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <title>비트코인 급등락 알리미</title>
+</head>
+<body>
+    <div class="container">
+        <div class="menu">
+            <div class="content">
+                <i class="fas fa-user-plus menuicon"></i>
+            </div>
+        </div>
+        <div class="menu">
+            <div class="content">
+                <i class="fas fa-unlock-alt menuicon"></i>
+            </div>
+        </div>
+        <div class="menu">
+            <div class="content">
+                <i class="far fa-question-circle menuicon"></i>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="publicJS/vanilla-tilt.js"></script>
+    <script>
+        VanillaTilt.init(document.querySelectorAll(".menu"), {
+		max: 25,
+		speed: 400,
+        glare: true,
+        "max-glare": 1,
+	});
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>  
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-messaging.js"></script>
+    <script type="module" src="publicJS/firebaseInit.js"></script>
+    <script type="module" src="loginJS/index.js"></script>
+</body>
+</html>

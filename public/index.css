@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap");
+
+* {
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(1, 0, 31);
+}
+body::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#f00, #f0f);
+  clip-path: circle(30% at right 70%);
+  z-index: -1;
+}
+body::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#2196f3, #e91e63);
+  clip-path: circle(20% at 10% 10%);
+}
+
+/* 시작메뉴 스타일링 */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  z-index: 1;
+  transition: 0.5s;
+}
+.container .menu {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 280px;
+  height: 280px;
+  margin: 30px;
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 15px 15px 50px rgba(0, 0, 0, 0.4);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  cursor: pointer;
+}
+.container .menu .content {
+  font-size: 130px;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: 0.5s;
+}
+.container .menu:hover .content {
+  transform: translateY(0px);
+  opacity: 1;
+}
+.js-tilt-glare {
+  border-radius: 20px;
+}
+
+/* 메뉴 사라짐 스타일링 */
+.menuDown {
+  transform: translateY(200px);
+  opacity: 0;
+}
+.menuDownAnd {
+  transform: translateY(200px) translateX(-10000px);
+}
+
+/* 각 메뉴 공통 스타일림 */
+.showContainer {
+  position: absolute;
+  top: -5000px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  background: rgb(20, 0, 60);
+  border-radius: 20px;
+  z-index: 1;
+  transition: 1s;
+}
+.showDown {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* 회원가입, 로그인 메뉴 스타일링 */
+.loginContainer {
+  position: relative;
+  padding: 40px;
+}
+.loginContainer .loginH1 {
+  text-align: center;
+  font-family: "Black Han Sans", sans-serif;
+  font-size: 40px;
+  letter-spacing: 20px;
+  margin-bottom: 80px;
+  transform: translateX(10px);
+  color: white;
+}
+.loginContainer .inputBox {
+  display: flex;
+  flex-direction: column;
+}
+.loginContainer .inputBox input {
+  width: 350px;
+  height: 50px;
+  border-radius: 15px;
+  font-size: 18px;
+}
+.loginContainer .inputBox input:nth-child(1) {
+  margin-bottom: 10px;
+}
+.loginContainer .inputBox input:focus {
+  outline: none;
+}
+.loginContainer .btnBox {
+  display: flex;
+  margin-top: 50px;
+}
+
+/* 정보 메뉴 스타일링 */
+.infoContainer {
+  position: relative;
+  padding: 40px;
+}
+.infoContainer .infoH1 {
+  text-align: center;
+  font-family: "Black Han Sans", sans-serif;
+  font-size: 40px;
+  letter-spacing: 20px;
+  transform: translateX(10px);
+  color: white;
+}
+.infoContainer .infoUl {
+  color: white;
+  font-family: "Do Hyeon", sans-serif;
+  font-size: 20px;
+  margin: 60px 0px 100px;
+}
+.infoContainer .infoLi:not(:last-child) {
+  margin-bottom: 30px;
+}
+.showContainer .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  font-family: "Do Hyeon", sans-serif;
+  font-size: 25px;
+  width: 120px;
+  height: 50px;
+  border-radius: 24px;
+  background: white;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .container .menu {
+    width: 180px;
+    height: 180px;
+  }
+
+  .menuDown {
+    transform: none;
+    opacity: 0;
+  }
+  .menuDownAnd {
+    transform: none;
+  }
+
+  .showContainer {
+    width: 350px;
+    height: 450px;
+  }
+
+  .loginContainer {
+    padding: 20px;
+  }
+  .loginContainer .loginH1 {
+    margin-bottom: 60px;
+  }
+  .loginContainer .inputBox input {
+    width: 300px;
+    height: 40px;
+    font-size: 16px;
+  }
+  .loginContainer .inputBox input:nth-child(1) {
+    margin-bottom: 10px;
+  }
+  .loginContainer .inputBox input:focus {
+    outline: none;
+  }
+  .loginContainer .btnBox {
+    margin-top: 40px;
+  }
+
+  .infoContainer {
+    padding: 20px;
+  }
+  .infoContainer .infoUl {
+    font-size: 15px;
+    margin: 40px 0px 60px;
+  }
+  .showContainer .btn {
+    font-size: 20px;
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+  }
+}

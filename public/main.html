@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="reset.css" rel="stylesheet">
+    <link href="main.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <title>비트코인 급등락 알리미</title>
+</head>
+<body>
+    <header class="mainHeader">
+        <a href="https://jaehyeok-han.github.io/noticeBitcoinPrice/">Coin Price Notice</a>
+        <div class="userBox">
+            <div class="setting">
+                Setting
+            </div>
+            <i class="fas fa-sign-out-alt"></i>
+        </div>
+        
+    </header>
+    <section class="searchBox">
+        <div>
+            <input type="text" class="searchInput">
+            <i class="fas fa-search searchBtn"></i>
+        </div>
+    </section>
+    <section class="contentBox">
+        <div class="favContent">
+        </div>
+        <div class="mainContent">
+        </div>
+    </section>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-messaging.js"></script>
+    <script type="module" src="publicJS/firebaseInit.js"></script>
+    <script type="module" src="mainJS/main.js"></script>
+    <script type="module" src="mainJS/search.js"></script>
+</body>
+</html>
