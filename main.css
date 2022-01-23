@@ -1,0 +1,440 @@
+@import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(1, 0, 31);
+  min-height: 100vh;
+}
+body::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#f00, #f0f);
+  clip-path: circle(30% at right 70%);
+}
+body::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#2196f3, #e91e63);
+  clip-path: circle(20% at 10% 10%);
+}
+
+/* 메인헤더 스타일링 */
+.mainHeader {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 900px;
+  height: 120px;
+  z-index: 1;
+}
+.mainHeader a {
+  text-decoration: none;
+  color: white;
+  font-size: 35px;
+  font-family: "Black Han Sans";
+}
+.mainHeader .userBox {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+}
+.mainHeader .userBox .setting {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 65px;
+  height: 25px;
+  background: white;
+  border-radius: 13px;
+  margin-right: 10px;
+  cursor: pointer;
+  font-family: "Do Hyeon", sans-serif;
+}
+.mainHeader .userBox i {
+  color: white;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+/* 모달창 스타일림 */
+.showContainer {
+  position: absolute;
+  top: -5000px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  background: rgb(20, 0, 60);
+  border-radius: 20px;
+  z-index: 1;
+  transition: 1s;
+}
+.showDown {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* 셋팅 메뉴 스타일링 */
+.settingContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+  z-index: 1;
+}
+.settingContainer .settingH1 {
+  text-align: center;
+  font-family: "Black Han Sans", sans-serif;
+  font-size: 40px;
+  letter-spacing: 20px;
+  margin-bottom: 50px;
+  transform: translateX(10px);
+  color: white;
+}
+.showContainer .btn {
+  position: absolute;
+  left: 50%;
+  bottom: 40px;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  font-family: "Do Hyeon", sans-serif;
+  font-size: 25px;
+  width: 120px;
+  height: 40px;
+  border-radius: 20px;
+  background: white;
+  cursor: pointer;
+}
+
+/* 알림추가 바 스타일링 */
+.settingContainer .plusDiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.settingContainer .plusDiv .input {
+  width: 150px;
+  text-align: right;
+}
+.settingContainer .plusDiv .plusBtn {
+  font-size: 25px;
+  color: green;
+  cursor: pointer;
+}
+
+/* 알림목록 스타일링 */
+.settingContainer .noticeContainer {
+  width: 100%;
+  color: white;
+}
+.settingContainer .noticeContainer .noticeTable {
+  width: 100%;
+  text-align: center;
+}
+.settingContainer .noticeContainer .noticeTable td,
+th {
+  padding: 10px;
+}
+.settingContainer .noticeContainer .noticeTable i {
+  font-size: 20px;
+  color: red;
+  cursor: pointer;
+}
+
+/* 검색박스 스타일링 */
+.searchBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 900px;
+  height: 70px;
+  z-index: 1;
+}
+.searchInput {
+  display: inline-block;
+  width: 400px;
+  height: 30px;
+  margin-right: 10px;
+  text-align: center;
+  font-size: 15px;
+  color: rgb(1, 0, 31);
+  border: 1px solid rgb(167, 167, 167);
+  border-radius: 15px;
+}
+.searchInput:focus {
+  outline: none;
+}
+.searchBtn {
+  font-size: 25px;
+  color: white;
+}
+.searchBtn:hover {
+  cursor: pointer;
+}
+
+/* 컨텐츠박스 스타일링 */
+.contentBox {
+  width: 900px;
+  z-index: 1;
+}
+
+/* 즐겨찾기 목록 스타일링 */
+.favContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* 즐겨찾기 종묵이 있을 때 스타일링 */
+.favItem {
+  position: relative;
+  width: 170px;
+  height: 220px;
+  margin: 30px 25px 50px;
+  border-radius: 25px;
+  background-color: white;
+  box-shadow: 0px 0px 10px 10px green;
+}
+.favItemTitleKo {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+.favItemTitleEn {
+  position: absolute;
+  top: 40px;
+  left: 15px;
+}
+.favItemPrice {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+
+/* 즐겨찾기 종목이 없을 때 스타일링 */
+.noItem {
+  min-height: 200px;
+  margin: 50px;
+  text-align: center;
+}
+.noItemIcon {
+  margin-bottom: 40px;
+  font-size: 100px;
+  color: rgb(167, 167, 167);
+}
+.noItemText {
+  display: block;
+  font-size: 20px;
+  color: rgb(167, 167, 167);
+}
+
+/* 검색 목록 스타일링 */
+.mainContent {
+  width: 900px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.mainContent .item {
+  position: relative;
+  display: inline-block;
+  width: 215px;
+  height: 120px;
+  margin: 5px;
+  border-radius: 20px;
+  background-color: rgb(24, 0, 70);
+  box-shadow: 0px 0px 15px 0px rgb(255, 255, 255);
+}
+.mainContent .item span:nth-child(1) {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+}
+.mainContent .item span:nth-child(2) {
+  position: absolute;
+  top: 45px;
+  left: 20px;
+  color: rgb(255, 255, 255);
+  font-size: 12px;
+}
+.mainContent .item span:nth-child(3) {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+}
+.mainContent .item span:nth-child(4) {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-size: 20px;
+  color: rgb(203, 203, 203);
+}
+.mainContent .item span:nth-child(4):hover {
+  cursor: pointer;
+}
+.yellow {
+  color: rgb(255, 183, 29);
+}
+
+@media (max-width: 768px) {
+  .mainHeader {
+    width: 100%;
+    height: 100px;
+  }
+  .mainHeader a {
+    font-size: 30px;
+  }
+  .mainHeader .userBox {
+    top: 90px;
+  }
+  .mainHeader .userBox .setting {
+    width: 60px;
+    height: 25px;
+    font-size: 13px;
+  }
+  .mainHeader .userBox i {
+    font-size: 20px;
+  }
+
+  .searchBox {
+    width: 100%;
+    margin-top: 20px;
+    z-index: 1;
+  }
+  .searchInput {
+    width: 250px;
+    height: 25px;
+  }
+  .searchBtn {
+    font-size: 20px;
+  }
+
+  .contentBox {
+    width: 100%;
+  }
+
+  .favItem {
+    width: 140px;
+    height: 180px;
+    margin: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 6px green;
+  }
+  .favItemTitleKo {
+    font-size: 14px;
+  }
+  .favItemTitleEn {
+    font-size: 14px;
+  }
+  .favItemPrice {
+    font-size: 20px;
+  }
+
+  .noItem {
+    min-height: 150px;
+    margin: 20px;
+  }
+  .noItemIcon {
+    font-size: 70px;
+  }
+  .noItemText {
+    font-size: 15px;
+  }
+
+  .mainContent {
+    width: 100%;
+  }
+  .mainContent .item {
+    width: 90%;
+    height: 60px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px 0px rgb(255, 255, 255);
+  }
+  .mainContent .item span:nth-child(1) {
+    top: 15px;
+    left: 55px;
+    font-size: 15px;
+  }
+  .mainContent .item span:nth-child(2) {
+    top: 35px;
+    left: 55px;
+    font-size: 12px;
+  }
+  .mainContent .item span:nth-child(4) {
+    top: 18px;
+  }
+
+  .showContainer {
+    width: 90%;
+    height: 60%;
+  }
+
+  .settingContainer {
+    padding: 20px;
+  }
+  .settingContainer .settingH1 {
+    margin-top: 20px;
+    margin-bottom: 25px;
+  }
+  .showContainer .btn {
+    bottom: 30px;
+    font-size: 20px;
+    width: 80px;
+    height: 40px;
+  }
+
+  .settingContainer .plusDiv {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .settingContainer .plusDiv .input {
+    width: 100px;
+    text-align: right;
+  }
+
+  .settingContainer .noticeContainer .noticeTable {
+    width: 100%;
+    font-size: 13px;
+  }
+  .settingContainer .noticeContainer .noticeTable td,
+  th {
+    padding: 5px;
+  }
+  .settingContainer .noticeContainer .noticeTable i {
+    font-size: 18px;
+  }
+}
